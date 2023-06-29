@@ -1,12 +1,7 @@
-// Create pipeline with agent maven and with a stage build that print the maven version
 pipeline {
-    agent {
-        docker {
-            image 'maven:3.6.3-openjdk-11'
-        }
-    }
+    agent { docker { image 'maven:3.3.3' } }
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
                 sh 'mvn --version'
             }
